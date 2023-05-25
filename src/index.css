@@ -1,0 +1,626 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: black;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    animation: ani 2s forwards;
+    filter: blur(50px);
+}
+
+@keyframes ani {
+    0%{filter: blur(50px)}
+    100%{filter: blur(0px)}
+}
+
+.wrapper {
+    background: white;
+    min-height: 768px;
+    width: 1360px;
+    padding-top: 50px;
+    margin: 0px auto 0px auto;
+
+}
+
+header {
+    height: 30px;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header .logo {
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 20px;
+    font-style: italic;
+}
+
+header ul.nav {
+    float: right;
+    list-style: none;
+}
+
+header ul.nav li {
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity .3s ease;
+}
+
+header ul.nav li:hover {
+    opacity: .5;
+}
+
+header .bag-button {
+    float: right;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: color, transform .5s ease;
+}
+
+header .bag-button:hover,
+header .bag-button.active{
+    color: #ff0000;
+    transform: scale(1.6);
+}
+
+header .shop-cart .bag-tag {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+header .shop-cart .shop-cart-in {
+    border-bottom: 1px solid #8f8f8f;
+    border-top: 1px solid #8f8f8f;
+}
+
+header .shop-cart .information {
+    margin-top: 20px;
+}
+
+header .shop-cart .empty {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    opacity: .4;
+}
+
+header .shop-cart input {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    width: 400px;
+    height: 30px;
+}
+header .shop-cart button {
+    margin-left: 20px;
+    border: 0;
+}
+
+header .shop-cart {
+    position: absolute;
+    left: 81%;
+    top: 30px;
+    width: 450px;
+    min-height: 100px;
+    background: #ffffff;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+header .shop-cart .item {
+    width: 90%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+header .shop-cart .item img {
+    width: 70px;
+    float: left;
+    margin-right: 20px;
+}
+
+header .shop-cart .item h4 {
+    font-size: 10px;
+}
+
+header .shop-cart .summa {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+header .shop-cart .add-to-cart {
+    font-weight: 700;
+    width: 410px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    background: black;
+    cursor: pointer;
+}
+
+header .shop-cart .add-to-cart:hover {
+    color: black;
+    background: rgba(255, 255, 255, 0);
+    outline: 1px solid black;
+    transition: .3s;
+}
+
+header .shop-cart .item .delete-item {
+    float: right;
+    position: relative;
+    top: -15px;
+    cursor: pointer;
+}
+
+header .shop-cart .alert-exit-active {
+    transform: translateX(150%);
+}
+
+header .shop-cart .item .delete-item {
+    font-size: 20px;
+}
+
+header .show-adm-pan {
+    cursor: pointer;
+}
+
+.categories {
+    text-align: center;
+}
+
+.categories div{
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.categories div:hover {
+    border-color: black;
+    transition: .3s;
+}
+
+.categories div {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    position: relative;
+    transition: all .5s ease-out;
+    transform-style: preserve-3d;
+}
+
+.categories div:after {
+    content: 'HELLA';
+    position: absolute;
+    padding: 5px 0px;
+    top: -50%;
+    left: 0px;
+    font-weight: 900;
+    font-style: italic;
+    width: 100%;
+    color: white;
+    background: #000000;
+    border-radius: 5px;
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+}
+
+.categories div:hover {
+    transform-origin: bottom;
+    transform: rotateX(-90deg);
+}
+
+.categories div:nth-last-child(1) {
+    margin-right: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+main .items {
+    display: flex;
+    width: 1200px;
+    flex-wrap: wrap;
+
+}
+
+main .item {
+    width: 270px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+main .item h4 {
+    cursor: pointer;
+}
+
+main .full-item {
+    width: 20%;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    overflow-scrolling: touch;
+}
+
+main .item img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform .6s ease;
+}
+
+main .item img:hover {
+    transform: scale(1.09);
+}
+
+main .full-item img {
+    width: 100%;
+    cursor: pointer;
+}
+
+main .item h4 {
+    font-weight: 900;
+    font-style: italic;
+}
+
+.full-item h4 {
+    font-weight: 900;
+    font-style: italic;
+}
+
+main .item b {
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+main .add-to-cart {
+    margin-top: 50px;
+    font-weight: 700;
+    width: auto;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    background: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main .add-to-cart:hover {
+    color: black;
+    background: rgba(255, 255, 255, 0);
+    outline: 1px solid black;
+    transition: .3s;
+}
+
+.adm-panel {
+    width: 400px;
+    background: white;
+}
+
+.full-item .add-to-cart {
+    margin-top: 50px;
+    font-weight: 700;
+    width: auto;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    background: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.full-item .add-to-cart:hover {
+    color: black;
+    background: white;
+    outline: 1px solid black;
+    transition: .3s;
+}
+
+.add-to-cart {
+    margin-top: 50px;
+    font-weight: 700;
+    width: auto;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    background: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    color: black;
+    background: white;
+    outline: 1px solid black;
+    transition: .3s;
+}
+
+.adm-panel {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    overflow: auto;
+}
+
+.new-good {
+    width: 270px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+main .plus-btn {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 205px;
+    margin-bottom: 175px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.add-new-good {
+    position: fixed;
+    left: 50%;
+    top: 78%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 450px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.4);
+    background: black;
+    color: white;
+    z-index: 9997;
+    overflow: auto;
+    height: auto;
+}
+
+.add-new-good .top-pan {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-new-good .pan-name {
+    font-weight: 900;
+    font-style: italic;
+}
+
+.add-new-good .close {
+    float: right;
+    font-size: 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color .2s ease-out;
+}
+
+.add-new-good .close:hover {
+    color: red;
+}
+
+.add-new-good button {
+    border: 0;
+    background: black;
+    width: 100%;
+    border: 1px solid white;
+}
+
+.add-new-good input {
+    width: 131px;
+    height: 20px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.full-item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9998;
+    overflow: auto;
+    height: auto;
+}
+
+.full-item > .fully .tov-info {
+    width: 50%;
+    margin-left: 30px;
+}
+.full-item > .fully .close {
+    font-size: 25px;
+}
+
+.full-item > .fully .tov-info h4 {
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.full-item > .fully .tov-info p {
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.full-item > .fully .tov-info b {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.full-item > .fully .tov-info .add-to-cart {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.full-item > .fully .tov-info p:nth-last-child(2) {
+    margin-top: 20px;
+}
+
+.full-item > .fully {
+    display: flex;
+    flex-direction: row;
+    z-index: 9999;
+    width: 1000px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 40px;
+    background: white;
+    border-radius: 5px;
+}
+
+.full-item > .fully img {
+    width: 50%;
+}
+
+.full-item > .fully .close {
+    float: right;
+    cursor: pointer;
+    transition: color .2s ease-out;
+}
+
+.full-item > .fully .close:hover {
+    color: red;
+}
+
+.plus-btn {
+    margin-top: 50px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.foot-adm {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: #ffffff;
+    color: #000000;
+    margin-top: 50px;
+    padding-top: 50px;
+    left: 0;
+    right: 0;
+}
+
+footer .marq {
+    background: #ffffff;
+    color: #000000;
+    font-style: italic;
+    font-size: 10px;
+    padding-top: 4px;
+}
+
+footer .logo {
+    font-weight: 900;
+    font-size: 75px;
+    font-style: italic;
+}
+
+footer .logo:nth-child(1) {
+    line-height: 25px;
+}
+
+footer .logo:nth-child(2) {
+    font-weight: 900;
+    font-size: 35px;
+    font-style: italic;
+}
+
+footer .text {
+    color: #8f8f8f;
+}
+
+footer .links1 {
+    display: flex;
+    justify-content: center;
+}
+
+footer .links {
+    width:5%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+footer .links > div {
+    font-weight: 900;
+    font-style: italic;
+    cursor: pointer;
+    transition: opacity .5s ease-out;
+}
+
+footer .links > div:hover {
+    opacity: .5;
+}
+
+footer .links > div a {
+    text-decoration: none;
+    color: black;
+}
+
+footer iframe {
+    margin-top: 10px;
+    border: 0;
+    width: 100%;
+    filter: grayscale(1);
+    border-radius: 15px;
+    opacity: .9;
+}
